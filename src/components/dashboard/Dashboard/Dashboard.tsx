@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Header } from '@/components/dashboard/Header/Header'
+import { KpiRow } from '@/components/dashboard/KpiRow/KpiRow'
 import { useDashboard } from '@/hooks/useDashboard'
 import { TODAS } from '@/types/dashboardView'
 import './Dashboard.scss'
@@ -28,7 +29,9 @@ export function Dashboard() {
         onPlataformaChange={setPlataforma}
         onMesChange={setMes}
       />
-      <main className="dashboard__contenido" />
+      <main className="dashboard__contenido">
+        <KpiRow kpis={dashboard.kpis} />
+      </main>
     </div>
   )
 }

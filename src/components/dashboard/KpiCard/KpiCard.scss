@@ -1,0 +1,37 @@
+@use '@/styles/tokens' as *;
+
+.kpi-card {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-4;
+
+  &__encabezado {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: $spacing-8;
+  }
+
+  &__label {
+    margin: 0;
+    font-size: $size-body-3;
+    font-weight: $weight-body-3;
+    color: $color-text-secondary;
+    text-transform: uppercase;
+  }
+
+  // margin-top: auto alinea los valores de las 4 tarjetas aunque un label ocupe 2 líneas.
+  &__valor {
+    margin: auto 0 0;
+    padding-top: $spacing-8;
+    font-size: $size-heading-1;
+    font-weight: $weight-heading-1;
+    color: $color-text-primary;
+  }
+
+  &__apoyo {
+    margin: 0;
+    font-size: $size-body-3;
+    color: $color-text-secondary;
+  }
+}

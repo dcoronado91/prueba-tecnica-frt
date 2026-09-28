@@ -1,0 +1,37 @@
+@use '@/styles/tokens' as *;
+
+.variation-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-4;
+  padding: 0 $spacing-8;
+  font-size: $size-body-3;
+  font-weight: $weight-body-1;
+  white-space: nowrap;
+  border-radius: $radius-badge;
+
+  &__icono {
+    width: $spacing-14;
+    height: $spacing-14;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  &--sube {
+    color: $color-semantic-success;
+    background: $color-semantic-subtle-success;
+  }
+
+  &--baja {
+    color: $color-semantic-error;
+    background: $color-semantic-subtle-error;
+  }
+
+  &--vacio {
+    color: $color-text-tertiary;
+    background: $color-gray-white-smoke;
+  }
+}
