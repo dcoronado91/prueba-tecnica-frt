@@ -1,0 +1,55 @@
+@use '@/styles/tokens' as *;
+
+.investment-mix {
+  &__tabla {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: $size-body-3;
+  }
+
+  &__encabezado {
+    padding: 0 0 $spacing-8;
+    font-weight: $weight-body-3;
+    color: $color-text-secondary;
+    text-align: left;
+    text-transform: uppercase;
+
+    &--num {
+      text-align: right;
+    }
+  }
+
+  &__canal {
+    padding: $spacing-12 0 0;
+    font-weight: $weight-body-3;
+    color: $color-text-primary;
+    text-align: left;
+  }
+
+  &__inversion {
+    padding: $spacing-12 0 0;
+    color: $color-text-secondary;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  // Separador "|" entre inversión y porcentaje, como en el diseño.
+  &__porcentaje {
+    padding: $spacing-12 0 0 $spacing-8;
+    font-weight: $weight-body-4;
+    color: $color-text-primary;
+    text-align: right;
+    white-space: nowrap;
+
+    &::before {
+      content: '|';
+      margin-right: $spacing-8;
+      font-weight: $weight-body-3;
+      color: $color-gray-timberwolf;
+    }
+  }
+
+  &__barra {
+    padding: $spacing-4 0 0;
+  }
+}

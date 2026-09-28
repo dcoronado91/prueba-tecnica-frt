@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Header } from '@/components/dashboard/Header/Header'
+import { InvestmentMix } from '@/components/dashboard/InvestmentMix/InvestmentMix'
 import { KpiRow } from '@/components/dashboard/KpiRow/KpiRow'
 import { LeadsChart } from '@/components/dashboard/LeadsChart/LeadsChart'
 import { useDashboard } from '@/hooks/useDashboard'
@@ -34,6 +35,7 @@ export function Dashboard() {
         <KpiRow kpis={dashboard.kpis} />
         <div className="dashboard__fila">
           <LeadsChart datos={dashboard.leadsPorMes} mesSeleccionado={dashboard.mesSeleccionado} />
+          <InvestmentMix canales={dashboard.mixInversion} />
         </div>
       </main>
     </div>

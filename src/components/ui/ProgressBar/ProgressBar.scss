@@ -1,0 +1,22 @@
+@use '@/styles/tokens' as *;
+
+.progress-bar {
+  width: 100%;
+  height: $spacing-8;
+  overflow: hidden;
+  background: $color-gray-alabaster;
+  border-radius: $radius-pill;
+
+  &__relleno {
+    height: 100%;
+    border-radius: $radius-pill;
+
+    &--primario {
+      background: $color-charts-blue-royal-azure;
+    }
+
+    &--oscuro {
+      background: $color-charts-blue-imperial-blue;
+    }
+  }
+}
