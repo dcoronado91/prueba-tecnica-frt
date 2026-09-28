@@ -3,42 +3,37 @@
 .month-stepper {
   display: flex;
   align-items: center;
-  gap: $spacing-8;
+  padding: $spacing-4;
   font-family: $font-functional;
+  background: $color-background-card;
+  border: 1px solid $color-gray-alabaster;
+  border-radius: $radius-input;
 
   &__mes {
-    // Ancho fijo para que las flechas no se muevan al cambiar de mes.
-    min-width: 16ch;
+    // Ancho del mes más largo ("Septiembre") para que las flechas no se muevan.
+    min-width: 10ch;
+    padding: 0 $spacing-8;
     font-size: $size-body-3;
-    font-weight: $weight-body-4;
-    color: $color-text-primary;
+    color: $color-text-secondary;
     text-align: center;
   }
 
   &__boton {
-    display: grid;
-    place-items: center;
-    width: $spacing-32;
-    height: $spacing-32;
-    padding: 0;
-    color: $color-text-primary;
-    background: $color-background-card;
-    border: 1px solid $color-gray-timberwolf;
+    width: $spacing-20;
+    height: $spacing-20;
+    padding: $spacing-4;
+    color: $color-text-tertiary;
+    background: transparent;
+    border: none;
     border-radius: $radius-icon-button;
     cursor: pointer;
 
-    svg {
-      width: $spacing-16;
-      height: $spacing-16;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
+    &:hover:not(:disabled) {
+      color: $color-text-primary;
     }
 
     &:disabled {
-      color: $color-text-tertiary;
+      color: $color-gray-timberwolf;
       cursor: not-allowed;
     }
 

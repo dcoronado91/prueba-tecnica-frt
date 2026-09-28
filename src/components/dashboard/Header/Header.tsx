@@ -29,18 +29,14 @@ export function Header({
   onPlataformaChange,
   onMesChange,
 }: HeaderProps) {
-  const iniciales = cliente
-    .split(' ')
-    .map((palabra) => palabra[0])
-    .join('')
-
   return (
     <header className="header">
       <div className="header__barra">
         <div className="header__cliente">
-          <span className="header__logo" aria-hidden="true">
-            {iniciales}
-          </span>
+          <svg className="header__logo" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="10.5" />
+            <circle cx="12" cy="12" r="5.5" />
+          </svg>
           <h1 className="header__nombre">{cliente}</h1>
         </div>
         <p className="header__presupuesto">

@@ -1,3 +1,4 @@
+import { Chevron } from '@/components/ui/Chevron/Chevron'
 import type { FiltroItem } from '@/types/dashboard'
 import './Select.scss'
 
@@ -33,6 +34,9 @@ export function Select({
             </option>
           ))}
         </select>
+        <span className="select__icono">
+          <Chevron direccion="down" />
+        </span>
       </div>
     </div>
   )

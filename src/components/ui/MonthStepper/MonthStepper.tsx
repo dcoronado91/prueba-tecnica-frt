@@ -1,4 +1,6 @@
+import { Chevron } from '@/components/ui/Chevron/Chevron'
 import type { MesItem } from '@/types/dashboard'
+import { nombreDelMes } from '@/utils/format'
 import './MonthStepper.scss'
 
 interface MonthStepperProps {
@@ -9,6 +11,7 @@ interface MonthStepperProps {
 
 export function MonthStepper({ meses, value, onChange }: MonthStepperProps) {
   const indice = meses.findIndex((m) => m.id === value)
+  const actual = meses[indice]
   const anterior = meses[indice - 1]
   const siguiente = meses[indice + 1]
 
@@ -21,13 +24,11 @@ export function MonthStepper({ meses, value, onChange }: MonthStepperProps) {
         disabled={!anterior}
         onClick={() => anterior && onChange(anterior.id)}
       >
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M15 6l-6 6 6 6" />
-        </svg>
+        <Chevron direccion="left" />
       </button>
 
-      <span className="month-stepper__mes" aria-live="polite">
-        {meses[indice]?.nombre}
+      <span className="month-stepper__mes" aria-live="polite" title={actual?.nombre}>
+        {actual && nombreDelMes(actual.nombre)}
       </span>
 
       <button
@@ -37,9 +38,7 @@ export function MonthStepper({ meses, value, onChange }: MonthStepperProps) {
         disabled={!siguiente}
         onClick={() => siguiente && onChange(siguiente.id)}
       >
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M9 6l6 6-6 6" />
-        </svg>
+        <Chevron direccion="right" />
       </button>
     </div>
   )

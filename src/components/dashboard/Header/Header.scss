@@ -8,7 +8,7 @@
     align-items: center;
     justify-content: space-between;
     gap: $spacing-16;
-    padding: $spacing-16 $spacing-32;
+    padding: $spacing-12 $spacing-16;
     background: $color-background-navbar;
     border-bottom: 1px solid $color-gray-alabaster;
   }
@@ -16,26 +16,22 @@
   &__cliente {
     display: flex;
     align-items: center;
-    gap: $spacing-12;
+    gap: $spacing-8;
   }
 
   &__logo {
-    display: grid;
-    place-items: center;
-    width: $spacing-36;
-    height: $spacing-36;
-    font-size: $size-body-3;
-    font-weight: $weight-body-4;
-    color: $color-primary-white;
-    background: $color-primary-verne;
-    border-radius: $radius-pill;
+    width: $spacing-28;
+    height: $spacing-28;
+    fill: none;
+    stroke: $color-charts-blue-royal-azure;
+    stroke-width: 3;
   }
 
   &__nombre {
     margin: 0;
     font-size: $size-heading-3;
-    font-weight: $weight-heading-3;
-    color: $color-primary-verne;
+    font-weight: $weight-heading-1;
+    color: $color-text-primary;
   }
 
   &__presupuesto {
@@ -44,8 +40,8 @@
     color: $color-text-secondary;
 
     strong {
-      font-weight: $weight-body-4;
-      color: $color-primary-verne;
+      font-weight: $weight-body-1;
+      color: $color-charts-blue-royal-azure;
     }
   }
 
@@ -54,14 +50,14 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: $spacing-16;
-    padding: $spacing-24 $spacing-32 0;
+    gap: $spacing-12;
+    padding: $spacing-16 $spacing-20 0;
   }
 
   &__filtros-derecha {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: $spacing-24;
+    gap: $spacing-12;
   }
 }

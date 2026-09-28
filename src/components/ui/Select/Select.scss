@@ -13,26 +13,25 @@
 
   &__control {
     position: relative;
+  }
 
-    // Flecha dibujada con bordes para no depender de un ícono ni de un color fijo.
-    &::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      right: $spacing-12;
-      width: $spacing-8;
-      height: $spacing-8;
-      border-right: 2px solid currentColor;
-      border-bottom: 2px solid currentColor;
-      transform: translateY(-75%) rotate(45deg);
-      pointer-events: none;
-    }
+  // El <select> nativo mantiene teclado y lector de pantalla; el ícono solo decora.
+  &__icono {
+    position: absolute;
+    top: 50%;
+    right: $spacing-8;
+    display: grid;
+    place-items: center;
+    width: $spacing-16;
+    height: $spacing-16;
+    color: $color-text-tertiary;
+    transform: translateY(-50%);
+    pointer-events: none;
   }
 
   select {
     appearance: none;
     font: inherit;
-    color: $color-text-primary;
     cursor: pointer;
 
     &:focus-visible {
@@ -42,29 +41,30 @@
   }
 
   &--default select {
-    padding: $spacing-8 $spacing-36 $spacing-8 $spacing-12;
+    padding: $spacing-4 $spacing-32 $spacing-4 $spacing-12;
     font-size: $size-body-3;
+    color: $color-text-secondary;
     background: $color-background-card;
-    border: 1px solid $color-gray-timberwolf;
+    border: 1px solid $color-gray-alabaster;
     border-radius: $radius-input;
   }
 
   &--title {
-    .select__control {
+    .select__icono {
+      right: 0;
+      width: $spacing-20;
+      height: $spacing-20;
+      padding: $spacing-4;
       color: $color-primary-verne;
-
-      &::after {
-        right: $spacing-4;
-        width: $spacing-12;
-        height: $spacing-12;
-      }
+      border: 1px solid currentColor;
+      border-radius: $radius-pill;
     }
 
     select {
       padding: 0 $spacing-32 0 0;
-      font-size: $size-heading-2;
-      font-weight: $weight-heading-2;
-      color: $color-primary-verne;
+      font-size: $size-heading-3;
+      font-weight: $weight-heading-3;
+      color: $color-text-primary;
       background: transparent;
       border: none;
       border-radius: $radius-input;
