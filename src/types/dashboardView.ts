@@ -49,6 +49,11 @@ export interface PacingView extends Pacing {
   porcentaje: number
 }
 
+export interface ConversionCanalView extends ConversionCanal {
+  // Participación del canal sobre el total de conversiones de la marca.
+  porcentaje: number
+}
+
 export interface DashboardView {
   cliente: string
   moneda: string
@@ -60,6 +65,8 @@ export interface DashboardView {
   mixInversion: CanalInversion[]
   leadsPorMes: LeadsMes[]
   audiencia: Audiencia | null
-  conversionPorCanal: ConversionCanal[]
+  conversionPorCanal: ConversionCanalView[]
   pacing: PacingView | null
+  // Mes de meta.actualizado: los paneles globales son una foto a esa fecha, no cambian con el filtro de mes.
+  mesActualizado: string
 }

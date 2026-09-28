@@ -3,6 +3,8 @@ import { Header } from '@/components/dashboard/Header/Header'
 import { InvestmentMix } from '@/components/dashboard/InvestmentMix/InvestmentMix'
 import { KpiRow } from '@/components/dashboard/KpiRow/KpiRow'
 import { LeadsChart } from '@/components/dashboard/LeadsChart/LeadsChart'
+import { PacingPanel } from '@/components/dashboard/PacingPanel/PacingPanel'
+import { WhatsAppConversion } from '@/components/dashboard/WhatsAppConversion/WhatsAppConversion'
 import { useDashboard } from '@/hooks/useDashboard'
 import { TODAS } from '@/types/dashboardView'
 import './Dashboard.scss'
@@ -36,6 +38,13 @@ export function Dashboard() {
         <div className="dashboard__fila">
           <LeadsChart datos={dashboard.leadsPorMes} mesSeleccionado={dashboard.mesSeleccionado} />
           <InvestmentMix canales={dashboard.mixInversion} />
+        </div>
+        <div className="dashboard__fila">
+          <WhatsAppConversion
+            audiencia={dashboard.audiencia}
+            canales={dashboard.conversionPorCanal}
+          />
+          <PacingPanel pacing={dashboard.pacing} mesActualizado={dashboard.mesActualizado} />
         </div>
       </main>
     </div>

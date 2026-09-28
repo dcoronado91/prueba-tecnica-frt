@@ -1,0 +1,41 @@
+@use '@/styles/tokens' as *;
+
+.whatsapp-conversion {
+  &__audiencia {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-16;
+  }
+
+  &__subtitulo {
+    margin: $spacing-16 0 $spacing-4;
+    font-size: $size-body-3;
+    font-weight: $weight-body-3;
+    color: $color-text-secondary;
+    text-transform: uppercase;
+  }
+
+  &__canales {
+    display: grid;
+    gap: $spacing-12;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__canal {
+    display: grid;
+    gap: $spacing-4;
+  }
+
+  &__fila {
+    display: flex;
+    justify-content: space-between;
+    font-size: $size-body-3;
+    color: $color-text-primary;
+  }
+
+  &__valor {
+    font-weight: $weight-body-4;
+  }
+}

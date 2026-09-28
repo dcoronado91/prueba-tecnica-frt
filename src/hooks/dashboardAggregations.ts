@@ -128,6 +128,8 @@ export function construirDashboard(data: DashboardData, filtros: FiltrosActivos)
   const delMesAnterior = mesAnterior ? filtrados.filter((r) => r.mes === mesAnterior) : []
 
   const pacing = panelesGlobales.pacing[filtros.marca] ?? null
+  const conversion = panelesGlobales.conversionPorCanal[filtros.marca] ?? []
+  const totalConversion = conversion.reduce((total, c) => total + c.valor, 0)
 
   return {
     cliente: meta.cliente,
@@ -144,7 +146,11 @@ export function construirDashboard(data: DashboardData, filtros: FiltrosActivos)
     mixInversion: calcularMixInversion(delMes, opciones.plataformas),
     leadsPorMes: calcularLeadsPorMes(filtrados, opciones.meses),
     audiencia: panelesGlobales.audiencia[filtros.marca] ?? null,
-    conversionPorCanal: panelesGlobales.conversionPorCanal[filtros.marca] ?? [],
+    conversionPorCanal: conversion.map((c) => ({
+      ...c,
+      porcentaje: dividir(c.valor, totalConversion),
+    })),
     pacing: pacing ? { ...pacing, porcentaje: dividir(pacing.actual, pacing.meta) } : null,
+    mesActualizado: opciones.meses.find((m) => meta.actualizado.startsWith(m.id))?.nombre ?? '',
   }
 }

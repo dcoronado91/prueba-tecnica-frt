@@ -1,0 +1,25 @@
+@use '@/styles/tokens' as *;
+
+.empty-state {
+  display: grid;
+  place-content: center;
+  gap: $spacing-4;
+  padding: $spacing-32 $spacing-16;
+  font-family: $font-functional;
+  text-align: center;
+  background: $color-gray-white-smoke;
+  border-radius: $radius-card;
+
+  &__titulo {
+    margin: 0;
+    font-size: $size-body-3;
+    font-weight: $weight-body-4;
+    color: $color-text-primary;
+  }
+
+  &__descripcion {
+    margin: 0;
+    font-size: $size-body-3;
+    color: $color-text-secondary;
+  }
+}

@@ -1,0 +1,44 @@
+@use '@/styles/tokens' as *;
+
+// No hay token de tamaño de gráfico; el donut necesita un alto definido.
+$alto-donut: 200px;
+
+.pacing-panel {
+  &__contenido {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    gap: $spacing-16;
+  }
+
+  &__stats {
+    display: grid;
+    gap: $spacing-8;
+  }
+
+  &__donut {
+    position: relative;
+    height: $alto-donut;
+  }
+
+  // Texto superpuesto al centro del anillo (HTML, no SVG, para estilarlo con tokens).
+  &__centro {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  &__porcentaje {
+    font-size: $size-heading-2;
+    font-weight: $weight-heading-3;
+    color: $color-text-primary;
+  }
+
+  &__leyenda {
+    font-size: $size-body-3;
+    color: $color-text-secondary;
+  }
+}
