@@ -24,8 +24,8 @@ export function useAsyncData<T>(fetcher: () => Promise<T>): AsyncState<T> {
       })
       .catch((err: unknown) => {
         if (!cancelado) {
-          const error = err instanceof Error ? err : new Error(String(err))
-          setState({ data: null, loading: false, error })
+        const error = err instanceof Error ? err : new Error(String(err))
+        setState({ data: null, loading: false, error })
         }
       })
 
