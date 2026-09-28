@@ -50,6 +50,8 @@ export interface PacingView extends Pacing {
 }
 
 export interface DashboardView {
+  cliente: string
+  moneda: string
   presupuestoTotal: number
   mesSeleccionado: string
   opciones: Filtros

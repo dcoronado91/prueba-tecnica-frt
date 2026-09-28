@@ -1,0 +1,50 @@
+@use '@/styles/tokens' as *;
+
+.month-stepper {
+  display: flex;
+  align-items: center;
+  gap: $spacing-8;
+  font-family: $font-functional;
+
+  &__mes {
+    // Ancho fijo para que las flechas no se muevan al cambiar de mes.
+    min-width: 16ch;
+    font-size: $size-body-3;
+    font-weight: $weight-body-4;
+    color: $color-text-primary;
+    text-align: center;
+  }
+
+  &__boton {
+    display: grid;
+    place-items: center;
+    width: $spacing-32;
+    height: $spacing-32;
+    padding: 0;
+    color: $color-text-primary;
+    background: $color-background-card;
+    border: 1px solid $color-gray-timberwolf;
+    border-radius: $radius-icon-button;
+    cursor: pointer;
+
+    svg {
+      width: $spacing-16;
+      height: $spacing-16;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    &:disabled {
+      color: $color-text-tertiary;
+      cursor: not-allowed;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $color-charts-blue-royal-azure;
+      outline-offset: 2px;
+    }
+  }
+}

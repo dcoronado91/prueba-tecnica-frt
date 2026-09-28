@@ -130,6 +130,8 @@ export function construirDashboard(data: DashboardData, filtros: FiltrosActivos)
   const pacing = panelesGlobales.pacing[filtros.marca] ?? null
 
   return {
+    cliente: meta.cliente,
+    moneda: meta.moneda,
     presupuestoTotal: meta.presupuestoTotal,
     mesSeleccionado: mes,
     opciones,

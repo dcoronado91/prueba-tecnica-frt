@@ -1,0 +1,73 @@
+@use '@/styles/tokens' as *;
+
+.select {
+  display: flex;
+  align-items: center;
+  gap: $spacing-8;
+  font-family: $font-functional;
+
+  &__label {
+    font-size: $size-body-3;
+    color: $color-text-secondary;
+  }
+
+  &__control {
+    position: relative;
+
+    // Flecha dibujada con bordes para no depender de un ícono ni de un color fijo.
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: $spacing-12;
+      width: $spacing-8;
+      height: $spacing-8;
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: translateY(-75%) rotate(45deg);
+      pointer-events: none;
+    }
+  }
+
+  select {
+    appearance: none;
+    font: inherit;
+    color: $color-text-primary;
+    cursor: pointer;
+
+    &:focus-visible {
+      outline: 2px solid $color-charts-blue-royal-azure;
+      outline-offset: 2px;
+    }
+  }
+
+  &--default select {
+    padding: $spacing-8 $spacing-36 $spacing-8 $spacing-12;
+    font-size: $size-body-3;
+    background: $color-background-card;
+    border: 1px solid $color-gray-timberwolf;
+    border-radius: $radius-input;
+  }
+
+  &--title {
+    .select__control {
+      color: $color-primary-verne;
+
+      &::after {
+        right: $spacing-4;
+        width: $spacing-12;
+        height: $spacing-12;
+      }
+    }
+
+    select {
+      padding: 0 $spacing-32 0 0;
+      font-size: $size-heading-2;
+      font-weight: $weight-heading-2;
+      color: $color-primary-verne;
+      background: transparent;
+      border: none;
+      border-radius: $radius-input;
+    }
+  }
+}

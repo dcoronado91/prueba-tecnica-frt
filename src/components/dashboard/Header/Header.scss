@@ -1,0 +1,67 @@
+@use '@/styles/tokens' as *;
+
+.header {
+  font-family: $font-functional;
+
+  &__barra {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-16;
+    padding: $spacing-16 $spacing-32;
+    background: $color-background-navbar;
+    border-bottom: 1px solid $color-gray-alabaster;
+  }
+
+  &__cliente {
+    display: flex;
+    align-items: center;
+    gap: $spacing-12;
+  }
+
+  &__logo {
+    display: grid;
+    place-items: center;
+    width: $spacing-36;
+    height: $spacing-36;
+    font-size: $size-body-3;
+    font-weight: $weight-body-4;
+    color: $color-primary-white;
+    background: $color-primary-verne;
+    border-radius: $radius-pill;
+  }
+
+  &__nombre {
+    margin: 0;
+    font-size: $size-heading-3;
+    font-weight: $weight-heading-3;
+    color: $color-primary-verne;
+  }
+
+  &__presupuesto {
+    margin: 0;
+    font-size: $size-body-3;
+    color: $color-text-secondary;
+
+    strong {
+      font-weight: $weight-body-4;
+      color: $color-primary-verne;
+    }
+  }
+
+  &__filtros {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-16;
+    padding: $spacing-24 $spacing-32 0;
+  }
+
+  &__filtros-derecha {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: $spacing-24;
+  }
+}

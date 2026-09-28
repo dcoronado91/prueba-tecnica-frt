@@ -1,0 +1,21 @@
+@use '@/styles/tokens' as *;
+
+.dashboard {
+  min-height: 100vh;
+  background: $color-background-content;
+
+  &__contenido {
+    display: grid;
+    gap: $spacing-24;
+    padding: $spacing-24 $spacing-32 $spacing-32;
+  }
+
+  &__estado {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: $font-functional;
+    color: $color-text-secondary;
+  }
+}
