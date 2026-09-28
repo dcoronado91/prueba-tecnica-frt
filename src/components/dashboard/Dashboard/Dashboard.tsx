@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Header } from '@/components/dashboard/Header/Header'
 import { KpiRow } from '@/components/dashboard/KpiRow/KpiRow'
+import { LeadsChart } from '@/components/dashboard/LeadsChart/LeadsChart'
 import { useDashboard } from '@/hooks/useDashboard'
 import { TODAS } from '@/types/dashboardView'
 import './Dashboard.scss'
@@ -31,6 +32,9 @@ export function Dashboard() {
       />
       <main className="dashboard__contenido">
         <KpiRow kpis={dashboard.kpis} />
+        <div className="dashboard__fila">
+          <LeadsChart datos={dashboard.leadsPorMes} mesSeleccionado={dashboard.mesSeleccionado} />
+        </div>
       </main>
     </div>
   )

@@ -21,6 +21,11 @@ export function formatearVariacion(fraccion: number): string {
   return `${signo}${formatearPorcentaje(Math.abs(fraccion))}`
 }
 
+// 77_650 -> "78k"
+export function formatearMiles(valor: number): string {
+  return `${Math.round(valor / 1000)}k`
+}
+
 // "Diciembre 2025" -> "Diciembre" (el diseño muestra solo el mes).
 export function nombreDelMes(nombreCompleto: string): string {
   return nombreCompleto.split(' ')[0]

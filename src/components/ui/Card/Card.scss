@@ -7,4 +7,22 @@
   border: 1px solid $color-gray-alabaster;
   border-radius: $radius-card;
   box-shadow: $shadow-card;
+
+  &__titulo {
+    display: flex;
+    align-items: center;
+    margin: 0 0 $spacing-16;
+    font-size: $size-body-3;
+    font-weight: $weight-body-1;
+    color: $color-text-primary;
+  }
+
+  // "Título | Subtítulo": la línea vertical separa ambos textos.
+  &__subtitulo {
+    margin-left: $spacing-8;
+    padding-left: $spacing-8;
+    font-weight: $weight-body-3;
+    color: $color-text-secondary;
+    border-left: 1px solid $color-gray-timberwolf;
+  }
 }

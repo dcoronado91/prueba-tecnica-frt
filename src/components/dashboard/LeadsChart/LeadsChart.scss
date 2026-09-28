@@ -1,0 +1,32 @@
+@use '@/styles/tokens' as *;
+
+// No hay token de alto de gráfico; recharts necesita un contenedor con alto definido.
+$alto-grafico: 260px;
+
+.leads-chart {
+  &__grafico {
+    height: $alto-grafico;
+    padding-top: $spacing-16;
+
+    // La etiqueta de la barra más alta queda sobre el borde del SVG; así no se recorta.
+    svg {
+      overflow: visible;
+    }
+  }
+
+  // Los textos del SVG se estilan con CSS, así no hay colores ni tamaños en TS.
+  &__tick,
+  &__valor {
+    font-size: $size-body-3;
+    fill: $color-text-secondary;
+  }
+
+  &__tick--activo {
+    font-weight: $weight-body-4;
+    fill: $color-text-primary;
+  }
+
+  &__valor {
+    fill: $color-text-primary;
+  }
+}

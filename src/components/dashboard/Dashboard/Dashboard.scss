@@ -10,6 +10,12 @@
     padding: $spacing-12 $spacing-20 $spacing-20;
   }
 
+  &__fila {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-12;
+  }
+
   &__estado {
     display: grid;
     place-items: center;
